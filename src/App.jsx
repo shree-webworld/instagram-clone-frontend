@@ -9,8 +9,11 @@ import {Routes, Route, Navigate, useParams } from "react-router-dom";
 import {ProtectedRoutes, CheckRoutes} from "./utils/AuthRoutes";
 
 
+
+
 export default function App()
 {
+
   return(<>
 
             <Routes>

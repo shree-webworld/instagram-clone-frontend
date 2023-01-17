@@ -16,6 +16,8 @@ export default function Home()
   const handlePasswordIcon = () => setShowPassword(!showPassword) ;
   const handleConfirmPasswordIcon = () => setConfirmPassword(!showConfirmPassword) ;
   const base_url = import.meta.env.VITE_BASE_URL;
+  const cloudinary_url = import.meta.env.VITE_CLOUDINARY_URL;
+
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -27,7 +29,7 @@ export default function Home()
                                     data.append("file",image);
                                     data.append("upload_preset","photogram");
                                     data.append("cloud_name","shreeproject");
-                                    let res = await axios.post("https://api.cloudinary.com/v1_1/shreeproject/image/upload",data);
+                                    let res = await axios.post(`${cloudinary_url}`,data);
                                     console.log(res);
                                     return res.data.secure_url;
 
